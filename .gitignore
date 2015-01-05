@@ -35,6 +35,4 @@ guava-rpm-maker/\.project
 .settings
 
 # maven
-src-main
-src-test
-plugin_test.jar
+maven

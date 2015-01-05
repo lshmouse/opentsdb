@@ -90,7 +90,7 @@
           <execution>
             <id>generate-build-data</id>
             <configuration>
-              <executable>build-aux/gen_build_data.sh</executable>
+              <executable>src-main/gen_build_data.sh</executable>
               <!-- optional -->
               <arguments>
                 <argument>target/generated-sources/net/opentsdb/BuildData.java</argument>
@@ -110,8 +110,8 @@
               <executable>jar</executable>
               <arguments>
                 <argument>cvfm</argument>
-                <argument>plugin_test.jar</argument>
-                <argument>test/META-INF/MANIFEST.MF</argument>
+                <argument>target/plugin_test.jar</argument>
+                <argument>src-test/net/opentsdb/META-INF/MANIFEST.MF</argument>
                 <argument>-C</argument>
                 <argument>target/test-classes</argument>
                 <argument>net/opentsdb/plugin/DummyPluginA.class</argument>
@@ -131,19 +131,19 @@
                 <argument>target/test-classes</argument>
                 <argument>net/opentsdb/tsd/DummyRTPublisher.class</argument>
                 <argument>-C</argument>
-                <argument>test</argument>
+                <argument>src-test/net/opentsdb</argument>
                 <argument>META-INF/services/net.opentsdb.plugin.DummyPlugin</argument>
                 <argument>-C</argument>
-                <argument>test</argument>
+                <argument>src-test/net/opentsdb</argument>
                 <argument>META-INF/services/net.opentsdb.search.SearchPlugin</argument>
                 <argument>-C</argument>
-                <argument>test</argument>
+                <argument>src-test/net/opentsdb</argument>
                 <argument>META-INF/services/net.opentsdb.tsd.HttpSerializer</argument>
                 <argument>-C</argument>
-                <argument>test</argument>
+                <argument>src-test/net/opentsdb</argument>
                 <argument>META-INF/services/net.opentsdb.tsd.RpcPlugin</argument>
                 <argument>-C</argument>
-                <argument>test</argument>
+                <argument>src-test/net/opentsdb</argument>
                 <argument>META-INF/services/net.opentsdb.tsd.RTPublisher</argument>
               </arguments>
             </configuration>
@@ -183,9 +183,9 @@
             <phase>process-resources</phase>
             <configuration>
               <target>
-                <copy file="${basedir}/src/mygnuplot.sh" todir="${basedir}/target/classes"/>
+                <copy file="${basedir}/src-main/net/opentsdb/mygnuplot.sh" todir="${basedir}/target/classes"/>
                 <chmod file="${basedir}/target/classes/mygnuplot.sh" perm="ugo+rx"/>
-                <copy file="${basedir}/src/mygnuplot.bat" todir="${basedir}/target/classes"/>
+                <copy file="${basedir}/src-main/net/opentsdb/mygnuplot.bat" todir="${basedir}/target/classes"/>
                 <chmod file="${basedir}/target/classes/mygnuplot.bat" perm="ugo+rx"/>
               </target>
             </configuration>
