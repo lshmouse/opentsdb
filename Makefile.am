@@ -599,7 +599,7 @@ pom.xml: pom.xml.in Makefile
 	    -e 's/@spec_version@/$(PACKAGE_VERSION)/' \
 	    ; \
 	} >$@-t
-	mv $@-t ../$@
+	mv $@-t maven/$@
 
 TIMESTAMP := $(shell date +"%Y%m%d%H%M%S")
 RPM_REVISION := 1
